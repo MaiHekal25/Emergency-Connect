@@ -14,9 +14,14 @@ class MainActivity : AppCompatActivity() {
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        //Data Source --> ArrayList
         var emergencies = ArrayList<EmergencyModel>()
         emergencies.add(EmergencyModel(R.drawable.ic_police, "Police", "122"))
         emergencies.add(EmergencyModel(R.drawable.ic_fire, "Fire Truck", "180"))
         emergencies.add(EmergencyModel(R.drawable.ic_child, "Child Rescue", "16000"))
+
+        //Adapter
+        val adapter = EmergencyAdapter(this, emergencies)
+        binding.recycler.adapter = adapter
     }
 }
