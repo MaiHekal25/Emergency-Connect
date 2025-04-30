@@ -1,6 +1,7 @@
 package com.training.emergencyapp
 
 import android.os.Bundle
+import androidx.activity.OnBackPressedCallback
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -9,6 +10,7 @@ import com.training.emergencyapp.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
+    private lateinit var onBackPressedCallback: OnBackPressedCallback
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
@@ -23,5 +25,21 @@ class MainActivity : AppCompatActivity() {
         //Adapter
         val adapter = EmergencyAdapter(this, emergencies)
         binding.recycler.adapter = adapter
+
+        // Register callback in onCreate
+        onBackPressedCallback = object : OnBackPressedCallback(true) { // true means initially enabled
+            override fun handleOnBackPressed() {
+                // Your custom back press logic here
+                val exitDialog = ExitDialog()
+                exitDialog.isCancelable = false
+                exitDialog.show(supportFragmentManager, null)
+            }
+        }
+        onBackPressedDispatcher.addCallback(this, onBackPressedCallback)
+        
+    }
+    override fun onDestroy() {
+        super.onDestroy()
+        onBackPressedCallback.remove()
     }
 }
