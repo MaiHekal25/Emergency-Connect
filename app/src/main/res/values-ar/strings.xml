@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Emergency App</string>
+    <string name="app_name">الطوارئ</string>
     <string name="police">الشرطة</string>
     <string name="fire_truck">المطافي</string>
     <string name="child_rescue">نجدة الطفل</string>
