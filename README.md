@@ -27,4 +27,6 @@
 ---
 
 ## 🚀 Getting Started
-https://github.com/MaiHekal25/Emergency-Connect.git
+1. Clone the repository:
+   ```bash
+   https://github.com/MaiHekal25/Emergency-Connect.git
