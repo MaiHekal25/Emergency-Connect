@@ -18,9 +18,10 @@ class MainActivity : AppCompatActivity() {
 
         //Data Source --> ArrayList
         var emergencies = ArrayList<EmergencyModel>()
-        emergencies.add(EmergencyModel(R.drawable.ic_police, "Police", "122"))
-        emergencies.add(EmergencyModel(R.drawable.ic_fire, "Fire Truck", "180"))
-        emergencies.add(EmergencyModel(R.drawable.ic_child, "Child Rescue", "16000"))
+        emergencies.add(EmergencyModel(R.drawable.ic_police, getString(R.string.police), "122"))
+        emergencies.add(EmergencyModel(R.drawable.ic_fire, getString(R.string.fire_truck), "180"))
+        emergencies.add(EmergencyModel(R.drawable.ic_child,
+            getString(R.string.child_rescue), "16000"))
 
         //Adapter
         val adapter = EmergencyAdapter(this, emergencies)
