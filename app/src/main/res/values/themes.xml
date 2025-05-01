@@ -1,9 +1,40 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Base.Theme.EmergencyApp" parent="Theme.Material3.DayNight.NoActionBar">
+    <style name="Base.Theme.EmergencyApp" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
         <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <!-- Primary Brand Color. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryVariant">@color/colorPrimaryVariant</item>
+        <item name="colorOnPrimary">@color/colorOnPrimary</item>
+
+        <!-- Secondary Brand Color. -->
+        <item name="colorSecondary">@color/colorSecondary</item>
+        <item name="colorSecondaryVariant">@color/colorSecondaryVariant</item>
+        <item name="colorOnSecondary">@color/colorOnSecondary</item>
+
+        <!-- Backgrounds and surfaces -->
+        <!-- To add background to all activities , it takes color or image from drawable-->
+        <item name="android:windowBackground">@color/colorBackground</item>
+        <item name="android:colorBackground">@color/colorBackground</item>
+        <item name="colorSurface">@color/colorSurface</item>
+        <item name="colorOnBackground">@color/colorOnBackground</item>
+        <item name="colorOnSurface">@color/colorOnSurface</item>
+        <item name="colorError">@color/colorError</item>
+
+        <!-- System bars -->
+        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
+        <item name="android:navigationBarColor">?attr/colorPrimary</item>
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+        <item name="android:windowTranslucentStatus">false</item>
     </style>
 
-    <style name="Theme.EmergencyApp" parent="Base.Theme.EmergencyApp" />
+    <style name="TextAppearance">
+        <item name="android:textColor">?attr/colorOnSurface</item>
+        <item name="android:textSize">24sp</item>
+        <item name="android:fontFamily">sans-serif</item>
+    </style>
+
+    <style name="TextAppearance.Headline">
+        <item name="android:fontFamily">sans-serif-medium</item>
+    </style>
 </resources>
